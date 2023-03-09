@@ -30,6 +30,13 @@ namespace WinCCAlarmMergeConverter
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
+                
+                if (!System.IO.File.Exists(ClassPath)) 
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Add .conf file with classes");
+                    Console.BackgroundColor= ConsoleColor.Black;
+                } 
                 StreamReader sr = new StreamReader(ClassPath);
                 //Read the first line of text
                 line = sr.ReadLine();
@@ -65,6 +72,13 @@ namespace WinCCAlarmMergeConverter
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
+
+                if (!System.IO.File.Exists(ClassPath))
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Add .conf file with types");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
                 StreamReader sr = new StreamReader(TypePath);
                 //Read the first line of text
                 line = sr.ReadLine();

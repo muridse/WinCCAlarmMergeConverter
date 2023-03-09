@@ -28,6 +28,12 @@ namespace WinCCAlarmMergeConverter
             try
             {
                 //Pass the file path and file name to the StreamReader constructor
+                if (!System.IO.File.Exists(AlarmFilePath))
+                {
+                    Console.BackgroundColor = ConsoleColor.Red;
+                    Console.WriteLine("Add alarm export file to AlarmFile directory");
+                    Console.BackgroundColor = ConsoleColor.Black;
+                }
                 StreamReader sr = new StreamReader(AlarmFilePath);
                 CurrentEncoding = IncodingDetector.GetEncoding(AlarmFilePath);
                 //Read the first line of text
