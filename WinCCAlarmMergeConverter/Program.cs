@@ -30,6 +30,7 @@ namespace WinCCAlarmMergeConverter
 
             Console.WriteLine("Creating new alarms file...");
             var alarmWriter = new AlarmWriter(ModdedAlarmFile, alarmConverter.GetUpdatedList(), alarmConverter.CurrentEncoding);
+            
             Console.WriteLine("Done.\n");
 
             Console.ReadLine();
@@ -40,7 +41,7 @@ namespace WinCCAlarmMergeConverter
             {
                 System.IO.Directory.CreateDirectory("..\\config");
             }
-            if (!System.IO.File.Exists("..\\config"))
+            if (!System.IO.File.Exists("..\\AlarmFile"))
             {
                 System.IO.Directory.CreateDirectory("..\\AlarmFile");
             }

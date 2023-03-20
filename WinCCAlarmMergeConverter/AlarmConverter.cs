@@ -34,8 +34,8 @@ namespace WinCCAlarmMergeConverter
                     Console.WriteLine("Add alarm export file to AlarmFile directory");
                     Console.BackgroundColor = ConsoleColor.Black;
                 }
-                StreamReader sr = new StreamReader(AlarmFilePath);
-                CurrentEncoding = IncodingDetector.GetEncoding(AlarmFilePath);
+                StreamReader sr = new StreamReader(AlarmFilePath, CodePagesEncodingProvider.Instance.GetEncoding(1251));
+                CurrentEncoding = sr.CurrentEncoding;
                 //Read the first line of text
                 line = sr.ReadLine();
                 //Continue to read until you reach end of file
@@ -44,6 +44,7 @@ namespace WinCCAlarmMergeConverter
                     AlarmList.Add(line);
                     //Read the next line
                     line = sr.ReadLine();
+                    Console.WriteLine(line);
                 }
                 //close the file
                 sr.Close();
