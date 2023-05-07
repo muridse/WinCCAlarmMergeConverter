@@ -1,5 +1,5 @@
 # WinCCAlarmMergeConverter
- WinCCAlarmMergeConverter is a utility for bulk renaming of classes and types in an alarm export file from a winss project. This utility is needed when merging two projects and further integrating alarms from one project into another.
+WinCCAlarmMergeConverter is a utility for bulk renaming of classes and types in an alarm export file from a winss project. This utility is needed when merging two projects and further integrating alarms from one project into another.
 
 # How to use?
 1. Export alarms from the first winss project
